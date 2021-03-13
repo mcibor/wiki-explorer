@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import Table from './components/Table';
+import Form from './components/Form';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+  state = {
+    characters: []
+  }
+
+  removeCharacter = (index) => {
+    const { characters } = this.state
+
+    this.setState({
+      characters: characters.filter((c, i) => i !== index)
+    });
+  }
+
+  handleSubmit = (character) => {
+    this.setState({characters:[...this.state.characters, character]});
+  }
+
+  render() {
+
+    return <div className="container">
+      <Form handleSubmit={this.handleSubmit}/>
+      <Table characterData={this.state.characters} removeCharacter={this.removeCharacter} />
     </div>
-  );
+  }
 }
 
 export default App;
