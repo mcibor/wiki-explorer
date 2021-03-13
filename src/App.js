@@ -1,31 +1,49 @@
 import { Component } from 'react';
 import './App.css';
-import Table from './components/Table';
-import Form from './components/Form';
+import 'antd/dist/antd.css';
+import WikiSearchBar from './components/WikiSearchBar';
+import WikiSearchResult from './components/WikiSearchResult';
+import { Layout, Menu } from 'antd';
+
+const { Header, Content } = Layout;
 
 class App extends Component {
   state = {
-    characters: []
+    data: {
+      articles: [],
+      links: []
+    },
   }
 
-  removeCharacter = (index) => {
-    const { characters } = this.state
-
-    this.setState({
-      characters: characters.filter((c, i) => i !== index)
-    });
-  }
-
-  handleSubmit = (character) => {
-    this.setState({characters:[...this.state.characters, character]});
+  handleSubmit = (query) => {
+    fetch(`https://${query.language}.wikipedia.org/w/api.php?` + new URLSearchParams({
+      action:'opensearch',
+      search:query.searchQuery,
+      format:'json',
+      origin:'*'
+    }))
+    .then((result) => result.json())
+    .then((result) => {
+      this.setState({
+        data: {articles: result[1], links: result[3]},
+      })
+    })
   }
 
   render() {
-
-    return <div className="container">
-      <Form handleSubmit={this.handleSubmit}/>
-      <Table characterData={this.state.characters} removeCharacter={this.removeCharacter} />
-    </div>
+    return (
+    <Layout>
+      <Header>
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+          <Menu.Item key="1">Wiki Search</Menu.Item>
+        </Menu>      
+      </Header>
+      <Content>
+        <WikiSearchBar sendSearchQuery={this.handleSubmit}/>
+        <WikiSearchResult searchResult={this.state.data}/>
+      </Content>
+    </Layout>
+    )
   }
 }
 
