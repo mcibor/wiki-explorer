@@ -9,8 +9,15 @@ class WikiSearchBar extends Component {
     searchQuery: '',
     language: 'en'
   };
-
+  
   state = this.initialState;
+
+  constructor(props){
+    super(props);
+    if (props.searchQuery) {
+      this.state = props.searchQuery;
+    }
+  }
   
   handleChange = (event) => {
     const { name, value } = event.target
@@ -33,7 +40,7 @@ class WikiSearchBar extends Component {
   }
 
   render() {
-    const { query, language } = this.state;
+    const { searchQuery, language } = this.state;
 
     return (
       <Form ref={this.form}>
@@ -47,9 +54,9 @@ class WikiSearchBar extends Component {
           rules={[{
             required: true,
             message: 'Please type in a query to search'
-          }]}
+          }]} value={searchQuery} 
         >
-          <Input name="searchQuery" value={query} onChange={this.handleChange} />
+          <Input name="searchQuery"onChange={this.handleChange} />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" onClick={this.handleSubmit} >Search</Button>
