@@ -28,5 +28,5 @@ jobs:
     - run: yarn install
     - run: yarn test
     - run: git config user.name "github-action"
-    - run: git config user.email "action@github.com"
+    - run: git config user.email "githubaction@githubaction.com"
     - run: npm run deploy
