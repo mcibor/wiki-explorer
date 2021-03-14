@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/App.css"],"names":[],"mappings":"AAAA,qBACI,gBAAiB,CACjB,YAAa,CACb,eACF","file":"main.fb99b254.chunk.css","sourcesContent":[".site-layout-content {\r\n    min-height: 280px;\r\n    padding: 24px;\r\n    background: #fff;\r\n  }"]}

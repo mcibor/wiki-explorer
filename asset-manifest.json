@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/wiki-explorer/static/css/main.fb99b254.chunk.css",
+    "main.js": "/wiki-explorer/static/js/main.bf150eac.chunk.js",
+    "main.js.map": "/wiki-explorer/static/js/main.bf150eac.chunk.js.map",
+    "runtime-main.js": "/wiki-explorer/static/js/runtime-main.7fd631d5.js",
+    "runtime-main.js.map": "/wiki-explorer/static/js/runtime-main.7fd631d5.js.map",
+    "static/css/2.015dc0ab.chunk.css": "/wiki-explorer/static/css/2.015dc0ab.chunk.css",
+    "static/js/2.9cfbf31d.chunk.js": "/wiki-explorer/static/js/2.9cfbf31d.chunk.js",
+    "static/js/2.9cfbf31d.chunk.js.map": "/wiki-explorer/static/js/2.9cfbf31d.chunk.js.map",
+    "static/js/3.a14bbcd0.chunk.js": "/wiki-explorer/static/js/3.a14bbcd0.chunk.js",
+    "static/js/3.a14bbcd0.chunk.js.map": "/wiki-explorer/static/js/3.a14bbcd0.chunk.js.map",
+    "index.html": "/wiki-explorer/index.html",
+    "static/css/2.015dc0ab.chunk.css.map": "/wiki-explorer/static/css/2.015dc0ab.chunk.css.map",
+    "static/css/main.fb99b254.chunk.css.map": "/wiki-explorer/static/css/main.fb99b254.chunk.css.map",
+    "static/js/2.9cfbf31d.chunk.js.LICENSE.txt": "/wiki-explorer/static/js/2.9cfbf31d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7fd631d5.js",
+    "static/css/2.015dc0ab.chunk.css",
+    "static/js/2.9cfbf31d.chunk.js",
+    "static/css/main.fb99b254.chunk.css",
+    "static/js/main.bf150eac.chunk.js"
+  ]
+}
