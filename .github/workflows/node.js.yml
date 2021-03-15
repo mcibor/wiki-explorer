@@ -24,7 +24,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
+    - run: yarn build
     - run: yarn test
-    - run: git config --global user.name "github-action-bot"
-    - run: git config --global user.email "github-action-bot@email.com"
-    - run: npm run deploy
+    - name: Cache
+      uses: actions/cache@v2.1.4
+      with:
+        path: build
+        key: wiki-explorer
+          
