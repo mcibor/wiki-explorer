@@ -31,4 +31,16 @@ jobs:
       with:
         path: build
         key: wiki-explorer
-          
+  publish:
+    runs-on: ubuntu-latest
+    steps:      
+    - name: Cache
+      uses: actions/cache@v2.1.4
+      with:
+        path: build
+        key: wiki-explorer
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2.2.0
+      with:
+        target_branch: page
+        build_dir: build
