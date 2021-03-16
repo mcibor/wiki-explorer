@@ -94,7 +94,7 @@ class App extends Component {
     }
 
     return (
-      <Router>
+      <Router basename="/wiki-explorer">
         <Layout className="layout">
 
           <Header>
